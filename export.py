@@ -34,7 +34,7 @@ pyRAPL.setup()
 rapl_meter = pyRAPL.Measurement('devices')
 
 # GPU meter configuration
-nvidia_meter = gpumeter.Meter(1.0)
+nvidia_meter = gpumeter.Meter()
 
 # Sample power drawn by CPU, DRAM and GPU
 while True:

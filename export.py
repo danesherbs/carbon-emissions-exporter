@@ -29,10 +29,10 @@ pyRAPL.setup()
 
 rapl_meter = pyRAPL.Measurement('devices')
 
-# NVIDIA SMI power meter configuration
+# GPU meter configuration
 nvidia_meter = gpumeter.Meter(1.0)
 
-# Sample power drawn by CPU and DRAM
+# Sample power drawn by CPU, DRAM and GPU
 while True:
     rapl_meter.begin()
 
@@ -58,7 +58,7 @@ while True:
         gpu_power_gauge.set(gpu_avg_power)
         gpu_carbon_eq_counter.inc(KG_CARBON_PER_KWH * gpu_avg_power * duration_hours)
 
-        # All devices, incl power to support devices (e.g. cooling)
+        # All devices, incl power to support devices (mainly cooling)
         total_avg_power = PUE * (pkg_avg_power + dram_avg_power + gpu_avg_power)  # kW
         total_power_gauge.set(total_avg_power)
         total_carbon_eq_counter.inc(KG_CARBON_PER_KWH * total_avg_power * duration_hours)

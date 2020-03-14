@@ -1,9 +1,13 @@
 # Consumption exporter
-Server that exports useful physical quantities used by CPU, GPU and DRAM via HTTP for Prometheus consumption.
+Server that exports useful physical quantities used by CPU, DRAM and GPU via HTTP for Prometheus consumption.
 
+### Start server
+```bash
+python export.py
+```
 
 ### Physical quantities
-- Energy
+- Power
 - Carbon emissions
 
 ### Devices

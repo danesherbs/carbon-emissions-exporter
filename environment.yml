@@ -1,0 +1,9 @@
+name: consumption-exporter
+
+dependencies:
+  - prometheus_client
+  - pip
+  - pip:
+      - PyRAPL
+      - pymongo>=3.9.0
+      - pandas>=0.25.1

@@ -34,16 +34,19 @@ while True:
     if meter.result is not None:
         duration_hours = meter.result.duration / 60 / 60  # original duration is in seconds
 
+        # CPU
         pkg_energy = sum(meter.result.pkg) / 10 ** 6  # Joules
         pkg_avg_power = pkg_energy / meter.result.duration / 10 ** 3  # kW
         pkg_power_gauge.set(pkg_avg_power)
         pkg_carbon_eq_counter.inc(KG_CARBON_PER_KWH * pkg_avg_power * duration_hours)
 
+        # DRAM
         dram_energy = sum(meter.result.dram) / 10 ** 6  # Joules
         dram_avg_power = dram_energy / meter.result.duration / 10 ** 3  # kW
         dram_power_gauge.set(dram_avg_power)
         dram_carbon_eq_counter.inc(KG_CARBON_PER_KWH * dram_avg_power * duration_hours)
 
+        # All devices
         total_avg_power = pkg_avg_power + dram_avg_power / 10 ** 3  # kW
         total_power_gauge.set(total_avg_power)
         total_carbon_eq_counter.inc(KG_CARBON_PER_KWH * total_avg_power * duration_hours)

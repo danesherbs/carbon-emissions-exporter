@@ -5,7 +5,7 @@ import time
 # TODO: fix this constant
 KG_CARBON_PER_JOULE = 0.954  # EPA, 2018 ...
 
-
+# Prometheus server
 start_http_server(8000)
 
 pkg_energy_gauge = Counter('pkg_energy', 'Cumulative energy consumed by CPU (J)')
@@ -17,10 +17,12 @@ dram_carbon_eq_gauge = Counter('dram_carbon_eq', 'Cumulative carbon emissions pr
 total_energy_gauge = Counter('total_energy', 'Cumulative energy consumed in total (J)')
 total_carbon_eq_gauge = Counter('total_carbon_eq', 'Cumulative carbon emissions produced in total (kg)')
 
+# Intel RAPL
 pyRAPL.setup()
 
 meter = pyRAPL.Measurement('energy_meter')  # measures consumption of CPU and DRAM
 
+# Sample energy consumed by CPU and DRAM
 while True:
     meter.begin()
 

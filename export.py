@@ -5,9 +5,9 @@ import time
 
 
 # Constants
-KG_CARBON_PER_KWH = 0.4327  # from Emissions & Generation Resource Integrated Database (EPA, 2018)
-PUE = 1.58  # Power Usage Effectiveness (PUE) from (Citation, 2019)
-SAMPLE_DUR = 0.5  # seconds to sample
+KG_CARBON_PER_KWH = 0.4327  # source: Emissions & Generation Resource Integrated Database (EPA, 2018)
+PUE = 1.58  # Power Usage Effectiveness (PUE), source: Uptime Institute Global Data Center Survey (Ascierto, 2018)
+SAMPLE_DUR = 0.5  # power sample interval length
 
 # Prometheus configuration
 start_http_server(8000)

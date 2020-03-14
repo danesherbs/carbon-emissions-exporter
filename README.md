@@ -4,9 +4,9 @@ Server that exports useful physical quantities used by CPU, GPU and DRAM via HTT
 
 ### Physical quantities
 - Energy
-- Power
+- Carbon emissions
 
 ### Devices
 - CPU
-- GPU
 - DRAM
+- GPU

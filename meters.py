@@ -28,7 +28,7 @@ def cpu_average_power(duration_secs=0.1):
     Power drawn by CPUs in kW
     """
     rapl_meter.begin()
-    time.sleep(duration)
+    time.sleep(duration_secs)
     return cpu_joules() / rapl_meter.result.duration / 10 ** 3
 
 def ram_energy():
@@ -42,7 +42,7 @@ def ram_average_power(duration_secs=0.1):
     Power drawn by RAM in kW
     """
     rapl_meter.begin()
-    time.sleep(duration)
+    time.sleep(duration_secs)
     return ram_energy() / rapl_meter.result.duration / 10 ** 3
 
 def gpu_power():

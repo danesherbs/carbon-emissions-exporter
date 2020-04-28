@@ -1,7 +1,7 @@
 # Carbon emissions exporter
 A simple Python package that:
 - Calculates physical quantities of your device `meters.py`
-- Calculate useful metrics `metrics.py`
+- Calculates useful metrics `metrics.py`
 
 Also includes a server that exports these via HTTP for Prometheus consumption `export.py`
 
